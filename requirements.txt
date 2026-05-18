@@ -2,29 +2,29 @@
 # Generated from pyproject.toml
 
 # Core ML & Data Science
-numpy>=2.4.0
-pandas>=2.3.3
+numpy>=2.4.5
+pandas>=3.0.3
 scikit-learn>=1.8.0
-xgboost>=3.1.2
+xgboost>=3.2.0
 
 # MLflow & Experiment Tracking
-mlflow>=3.8.0
+mlflow>=3.12.0
 
 # API & Serving
-fastapi>=0.127.0
-uvicorn>=0.40.0
-pydantic>=2.0.0
+fastapi>=0.136.1
+uvicorn>=0.47.0
+pydantic>=2.13.4
 
 # Data Versioning
-dvc>=3.65.0
+dvc>=3.67.1
 
 # Data Validation
-great-expectations>=1.10.0
+great-expectations>=1.17.2
 
 # Additional dependencies for production
-python-multipart>=0.0.9
-google-cloud-storage>=2.10.0
-boto3>=1.34.0
+python-multipart>=0.0.29
+google-cloud-storage>=3.10.1
+boto3>=1.43.9
 
 # Airflow (optional for local dev)
 # apache-airflow>=2.8.0

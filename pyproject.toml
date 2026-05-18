@@ -4,13 +4,13 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
-    "dvc>=3.65.0",
-    "fastapi>=0.127.0",
-    "great-expectations>=1.10.0",
-    "mlflow>=3.8.0",
-    "numpy>=2.4.0",
-    "pandas>=2.3.3",
+    "dvc>=3.67.1",
+    "fastapi>=0.136.1",
+    "great-expectations>=1.17.2",
+    "mlflow>=3.12.0",
+    "numpy>=2.4.5",
+    "pandas>=3.0.3",
     "scikit-learn>=1.8.0",
-    "uvicorn>=0.40.0",
-    "xgboost>=3.1.2",
+    "uvicorn>=0.47.0",
+    "xgboost>=3.2.0",
 ]
