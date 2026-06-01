@@ -177,6 +177,17 @@ def predict(request: PredictionRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
 
+@app.get("/")
+def root():
+    """Root endpoint for quick service validation."""
+    return {
+        "status": "healthy",
+        "message": "No-Show Predictor API is running.",
+        "model_loaded": model is not None,
+        "model_info": model_info,
+        "mlflow_uri": MLFLOW_TRACKING_URI
+    }
+
 @app.get("/health")
 def health():
     """Health check endpoint for Cloud Run."""
