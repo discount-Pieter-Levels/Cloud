@@ -62,8 +62,6 @@ data/processed/*.csv
 *.dvc
 
 # MLflow (large artifacts)
-mlruns/
-mlartifacts/
 
 # Jupyter
 *.ipynb
