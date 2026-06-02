@@ -18,11 +18,11 @@ WORKDIR /app
 COPY --from=builder /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
 
-# Copy application code
+# Copy application code (includes mlruns/ with trained model)
 COPY . .
 
-# Create runtime directories for MLflow artifacts and model storage
-RUN mkdir -p /app/mlruns /app/models
+# Ensure models directory exists (mlruns/ is provided by COPY)
+RUN mkdir -p /app/models
 
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000 \
