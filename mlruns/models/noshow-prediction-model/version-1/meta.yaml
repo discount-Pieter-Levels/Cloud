@@ -1,0 +1,16 @@
+creation_timestamp: 1780407741029
+current_stage: Production
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1780407741042
+model_id: m-c6bfef3da87247a4ba33212ef122319e
+name: noshow-prediction-model
+run_id: 86433fa18db542bba1be6a5c8c1ca5ea
+run_link: null
+source: models:/m-c6bfef3da87247a4ba33212ef122319e
+status: READY
+status_message: null
+storage_location: file:///home/dhruv/Desktop/MLops/mlruns/326076643048826623/models/m-c6bfef3da87247a4ba33212ef122319e/artifacts
+user_id: null
+version: 1
+workspace: default

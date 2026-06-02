@@ -1,0 +1,14 @@
+artifact_uri: file:///home/dhruv/Desktop/MLops/mlruns/326076643048826623/86433fa18db542bba1be6a5c8c1ca5ea/artifacts
+end_time: 1780407741017
+entry_point_name: ''
+experiment_id: '326076643048826623'
+lifecycle_stage: active
+run_id: 86433fa18db542bba1be6a5c8c1ca5ea
+run_name: clean-owl-406
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780407738568
+status: 3
+tags: []
+user_id: dhruv

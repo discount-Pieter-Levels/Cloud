@@ -1,0 +1,10 @@
+artifact_location: file:///home/dhruv/Desktop/MLops/mlruns/326076643048826623/models/m-c6bfef3da87247a4ba33212ef122319e/artifacts
+creation_timestamp: 1780407738877
+experiment_id: '326076643048826623'
+last_updated_timestamp: 1780407741009
+model_id: m-c6bfef3da87247a4ba33212ef122319e
+model_type: null
+name: model
+source_run_id: 86433fa18db542bba1be6a5c8c1ca5ea
+status: 2
+status_message: null

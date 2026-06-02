@@ -1,6 +1,7 @@
 import xgboost as xgb
 import pandas as pd
 import joblib
+import os
 import mlflow
 import mlflow.xgboost
 from sklearn.model_selection import train_test_split
@@ -85,8 +86,9 @@ def train_and_promote_if_better(data_path: str, model_path: str = "models/xgboos
     # Train the model
     run_id, metrics = train_model(data_path, model_path)
     
-    # Initialize model registry
-    registry = ModelRegistry()
+    # Initialize model registry with local tracking URI
+    tracking_uri = os.getenv("MLFLOW_TRACKING_URI", "file:///app/mlruns")
+    registry = ModelRegistry(tracking_uri=tracking_uri)
     
     # Automatically promote if better than current Production
     promoted_version = registry.auto_promote_if_better(

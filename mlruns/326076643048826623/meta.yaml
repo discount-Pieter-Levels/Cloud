@@ -1,0 +1,9 @@
+artifact_location: file:///home/dhruv/Desktop/MLops/mlruns/326076643048826623
+creation_time: 1780407738305
+effective_trace_archival_retention: null
+experiment_id: '326076643048826623'
+last_update_time: 1780407738305
+lifecycle_stage: active
+name: noshow-prediction
+trace_location: null
+workspace: default
