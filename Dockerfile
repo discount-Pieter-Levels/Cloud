@@ -27,6 +27,7 @@ RUN mkdir -p /app/mlruns /app/models
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000 \
     MLFLOW_TRACKING_URI=file:///app/mlruns \
+    MLFLOW_ALLOW_FILE_STORE=true \
     MODEL_NAME=noshow-prediction-model
 
 EXPOSE 8000

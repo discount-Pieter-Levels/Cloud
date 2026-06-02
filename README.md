@@ -91,8 +91,11 @@ Render can deploy this app directly from GitHub using the root `Dockerfile`.
 4. Use branch `main`.
 5. Set the environment variables:
    - `MLFLOW_TRACKING_URI=file:///app/mlruns`
+   - `MLFLOW_ALLOW_FILE_STORE=true` (required for MLflow file store on Render demos)
    - `MODEL_NAME=noshow-prediction-model`
 6. Deploy.
+
+> Note: `file:///app/mlruns` is for local/demo use only. For production, use a remote MLflow tracking backend or a database-backed store such as `sqlite:///mlflow.db`.
 
 Render will build the Docker image and start the app on the port it provides via `$PORT`.
 

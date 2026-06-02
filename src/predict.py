@@ -39,6 +39,17 @@ model_info = {"name": "unknown", "version": "unknown"}
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "file:///app/mlruns")
 MODEL_NAME = os.getenv("MODEL_NAME", "noshow-prediction-model")
 
+
+def _ensure_mlflow_file_store_allowed():
+    if MLFLOW_TRACKING_URI.startswith("file:///"):
+        allow = os.getenv("MLFLOW_ALLOW_FILE_STORE", "").lower()
+        if allow in ("1", "true", "yes"):
+            os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
+            print("ℹ️ MLflow file store access enabled via MLFLOW_ALLOW_FILE_STORE=true")
+        else:
+            print("⚠️ MLflow local file store is in maintenance mode. Set MLFLOW_ALLOW_FILE_STORE=true to allow it.")
+
+
 def load_production_model():
     """
     Dynamically load the model currently in Production stage from MLflow Registry.
@@ -48,6 +59,7 @@ def load_production_model():
     global model, model_info
     
     try:
+        _ensure_mlflow_file_store_allowed()
         mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
         client = mlflow.MlflowClient()
         
