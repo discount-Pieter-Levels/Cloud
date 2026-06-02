@@ -128,6 +128,15 @@ ML backend/model
      -d '{"patient_id": 123, "gender": "M", "age": 40, "scheduled_day": "2026-05-20T10:00:00", "appointment_day": "2026-05-25T10:00:00", "neighbourhood": "JARDIM DA PENHA", "scholarship": false, "hypertension": false, "diabetes": false, "alcoholism": false, "handicap": 0, "sms_received": true}'
    ```
 
+## Frontend deployment (Node)
+
+This repository includes a React frontend and a Node server that can run without the Python ML backend.
+
+- `npm run build` builds the client and server into `dist/`
+- `npm start` runs the production server on port `5000`
+- If `DATABASE_URL` is not set, the app uses in-memory storage so predictions still work in demo mode.
+- Use `Dockerfile.render` for a Node-based Render deployment when you want to deploy via Docker.
+
 ## Notes
 - The service defaults to a local MLflow artifact store at `/app/mlruns`.
 - For production, point `MLFLOW_TRACKING_URI` to an external MLflow backend.
