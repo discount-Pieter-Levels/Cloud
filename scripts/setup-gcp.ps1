@@ -9,10 +9,10 @@ param(
     [string]$Region = "us-central1",
     
     [Parameter(Mandatory=$false)]
-    [string]$ServiceAccountName = "mlops-deployer",
+    [string]$ServiceAccountName = "cloud-deployer",
     
     [Parameter(Mandatory=$false)]
-    [string]$ArtifactRepo = "mlops-models"
+    [string]$ArtifactRepo = "cloud-models"
 )
 
 Write-Host ""
@@ -65,7 +65,7 @@ if ($existingRepo) {
     gcloud artifacts repositories create $ArtifactRepo `
         --repository-format=docker `
         --location=$Region `
-        --description="MLOps Docker images" `
+        --description="Cloud Docker images" `
         --quiet
     
     if ($LASTEXITCODE -eq 0) {
@@ -84,7 +84,7 @@ if ($existingSA) {
     Write-Host "  OK Service account already exists" -ForegroundColor Green
 } else {
     gcloud iam service-accounts create $ServiceAccountName `
-        --display-name="MLOps GitHub Actions Deployer" `
+        --display-name="Cloud GitHub Actions Deployer" `
         --quiet
     
     if ($LASTEXITCODE -eq 0) {

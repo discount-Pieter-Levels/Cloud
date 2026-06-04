@@ -8,7 +8,7 @@ export default function Architecture() {
     <Layout>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-1">System Architecture</h1>
-        <p className="text-muted-foreground">Overview of the MLOps pipeline and tech stack</p>
+        <p className="text-muted-foreground">Overview of the Cloud pipeline and tech stack</p>
       </div>
 
       <div className="grid gap-8">

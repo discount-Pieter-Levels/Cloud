@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
               <Activity className="w-5 h-5 text-primary" />
             </div>
-            <h1 className="font-bold text-lg tracking-tight">MLOps Control</h1>
+              <h1 className="font-bold text-lg tracking-tight">Cloud Control</h1>
           </div>
           <div className="mt-2 text-xs text-muted-foreground font-mono px-1">
             v2.4.0-stable

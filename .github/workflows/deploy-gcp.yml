@@ -20,7 +20,7 @@ env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   REGION: asia-south1
   SERVICE_NAME: noshow-prediction-api
-  ARTIFACT_REGISTRY_REPO: mlops-models
+  ARTIFACT_REGISTRY_REPO: cloud-models
   IMAGE_NAME: noshow-predictor
 
 jobs:

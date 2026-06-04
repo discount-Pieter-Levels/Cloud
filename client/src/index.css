@@ -40,7 +40,7 @@
     --warning: 45 93% 47%;
   }
 
-  /* Force dark mode aesthetic for this MLOps tool */
+  /* Force dark mode aesthetic for this Cloud tool */
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;

@@ -17,26 +17,26 @@ export REGION="us-central1"
 gcloud services enable run.googleapis.com artifactregistry.googleapis.com
 
 # Create Artifact Registry
-gcloud artifacts repositories create mlops-models \
+gcloud artifacts repositories create cloud-models \
   --repository-format=docker \
   --location=$REGION
 
 # Create service account
-gcloud iam service-accounts create mlops-deployer \
-  --display-name="MLOps Deployer"
+gcloud iam service-accounts create cloud-deployer \
+  --display-name="Cloud Deployer"
 
 # Grant permissions
 gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member="serviceAccount:mlops-deployer@$PROJECT_ID.iam.gserviceaccount.com" \
+  --member="serviceAccount:cloud-deployer@$PROJECT_ID.iam.gserviceaccount.com" \
   --role="roles/run.admin"
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member="serviceAccount:mlops-deployer@$PROJECT_ID.iam.gserviceaccount.com" \
+  --member="serviceAccount:cloud-deployer@$PROJECT_ID.iam.gserviceaccount.com" \
   --role="roles/artifactregistry.writer"
 
 # Generate key
 gcloud iam service-accounts keys create gcp-key.json \
-  --iam-account=mlops-deployer@$PROJECT_ID.iam.gserviceaccount.com
+  --iam-account=cloud-deployer@$PROJECT_ID.iam.gserviceaccount.com
 ```
 
 ### 2️⃣ GitHub Secrets (2 minutes)
@@ -45,7 +45,7 @@ Go to: **Settings → Secrets and variables → Actions → New repository secre
 Add these secrets:
 - `GCP_PROJECT_ID`: Your GCP project ID
 - `GCP_SA_KEY`: Contents of `gcp-key.json` file
-- `GCP_SERVICE_ACCOUNT_EMAIL`: `mlops-deployer@your-project-id.iam.gserviceaccount.com`
+- `GCP_SERVICE_ACCOUNT_EMAIL`: `cloud-deployer@your-project-id.iam.gserviceaccount.com`
 
 ### 3️⃣ Deploy (automatic on push)
 ```bash
@@ -108,7 +108,7 @@ if promoted_version:
 python scripts/trigger_model_deployment.py \
   --model-version v3 \
   --repo-owner your-username \
-  --repo-name MLops
+--repo-name Cloud
 ```
 
 **Option B: Manual (GitHub UI)**
@@ -232,7 +232,7 @@ gcloud run services logs read noshow-prediction-api --region us-central1
 ## 📚 File Structure
 
 ```
-MLops/
+Cloud/
 ├── .github/workflows/
 │   ├── ci.yml                    # CI pipeline
 │   ├── deploy-gcp.yml            # CD deployment

@@ -1,7 +1,7 @@
 # 🚀 Google Cloud Platform Deployment Guide
 
 ## Overview
-This guide walks you through deploying the No-Show Prediction MLOps pipeline to Google Cloud Run with automatic CI/CD using GitHub Actions.
+This guide walks you through deploying the No-Show Prediction Cloud pipeline to Google Cloud Run with automatic CI/CD using GitHub Actions.
 
 ---
 
@@ -9,7 +9,7 @@ This guide walks you through deploying the No-Show Prediction MLOps pipeline to 
 
 1. **Google Cloud Project**
    - Active GCP project with billing enabled
-   - Project ID (e.g., `my-mlops-project-12345`)
+   - Project ID (e.g., `my-cloud-project-12345`)
 
 2. **Local Tools**
    - Google Cloud SDK (`gcloud`) installed
@@ -28,8 +28,8 @@ This guide walks you through deploying the No-Show Prediction MLOps pipeline to 
 ```bash
 export PROJECT_ID="your-gcp-project-id"
 export REGION="us-central1"
-export SERVICE_ACCOUNT_NAME="mlops-deployer"
-export ARTIFACT_REPO="mlops-models"
+export SERVICE_ACCOUNT_NAME="cloud-deployer"
+export ARTIFACT_REPO="cloud-models"
 ```
 
 ### Step 2: Enable Required APIs
@@ -48,13 +48,13 @@ gcloud services enable \
 gcloud artifacts repositories create $ARTIFACT_REPO \
   --repository-format=docker \
   --location=$REGION \
-  --description="MLOps Docker images"
+  --description="Cloud Docker images"
 ```
 
 ### Step 4: Create Service Account for GitHub Actions
 ```bash
 gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME \
-  --display-name="MLOps GitHub Actions Deployer"
+  --display-name="Cloud GitHub Actions Deployer"
 
 # Grant necessary permissions
 gcloud projects add-iam-policy-binding $PROJECT_ID \
@@ -367,4 +367,4 @@ This setup demonstrates:
 
 ---
 
-**🎉 You're now ready to deploy your MLOps pipeline to production!**
+**🎉 You're now ready to deploy your Cloud pipeline to production!**

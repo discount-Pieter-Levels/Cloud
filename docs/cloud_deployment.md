@@ -1,6 +1,6 @@
 # Project & Cloud Deployment Guide
 
-This document explains the No-Show Prediction MLOps project and how to run and deploy it to the cloud (Render and CI/CD via GitHub Actions).
+This document explains the No-Show Prediction Cloud project and how to run and deploy it to the cloud (Render and CI/CD via GitHub Actions).
 
 **Project Summary**
 
@@ -41,7 +41,7 @@ The repository contains a root `Dockerfile` that uses a multi-stage build to kee
 Build:
 
 ```bash
-docker build -t mlops-project .
+docker build -t cloud-project .
 ```
 
 Run:
@@ -51,7 +51,7 @@ docker run -p 8000:8000 \
   -e PORT=8000 \
   -e MLFLOW_TRACKING_URI=file:///app/mlruns \
   -e MODEL_NAME=noshow-prediction-model \
-  mlops-project
+  cloud-project
 ```
 
 Notes:

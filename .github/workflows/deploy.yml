@@ -38,11 +38,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t mlops-project .
+          docker build -t cloud-project .
 
       - name: Run container and verify health endpoint
         run: |
-          docker run -d --name mlops-smoke -p 8000:8000 -e PORT=8000 mlops-project
+          docker run -d --name cloud-smoke -p 8000:8000 -e PORT=8000 cloud-project
           for i in 1 2 3 4 5; do
             curl --fail http://localhost:8000/health && break || sleep 2;
           done
@@ -51,4 +51,4 @@ jobs:
       - name: Stop smoke container
         if: always()
         run: |
-          docker rm -f mlops-smoke || true
+          docker rm -f cloud-smoke || true

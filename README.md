@@ -1,6 +1,6 @@
-# No-Show Prediction MLOps Pipeline
+# No-Show Prediction Cloud Pipeline
 
-A GitHub-ready MLOps deployment project for a medical appointment "no-show" prediction API.
+A GitHub-ready Cloud deployment project for a medical appointment "no-show" prediction API.
 
 This repository contains the model training, MLflow registry integration, and a FastAPI inference service packaged for cloud deployment.
 
@@ -51,11 +51,11 @@ This repository contains the model training, MLflow registry integration, and a 
 ## Docker usage
 Build the production image:
 ```bash
-docker build -t mlops-project .
+docker build -t cloud-project .
 ```
 Run the container locally:
 ```bash
-docker run -p 8000:8000 mlops-project
+docker run -p 8000:8000 cloud-project
 ```
 Verify the app is running:
 ```bash
